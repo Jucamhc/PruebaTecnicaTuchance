@@ -87,19 +87,34 @@ fecha_ingreso: 10/08/2010
 
 ---
 
-### 4️⃣ **Consultar Alumnos por Grado**
-📌 Método: **GET**  
-🔗 URL: `http://localhost:8000/api/consultar-alumno/{idGrado}`
+### 4️⃣ **Consultar Alumnos**  
+📌 **Método:** GET  
+🔗 **URL:** `http://localhost:8000/api/consultar-alumno`  
 
-🔹 **Requisitos:**
-- **Autenticación:** Se debe enviar un **Bearer Token** en los headers con el **TOKEN_GENERADO**.
+🔹 **Parámetros opcionales:**  
+Puedes enviar los siguientes parámetros en la URL para filtrar los resultados:  
 
-🔹 **Ejemplo de Uso:**
+- `grado` → Filtra por grado (Ej: `?grado=5` devuelve todos los alumnos del grado 5).  
+- `alumno` → Filtra por un alumno específico (Ej: `?alumno=10` devuelve solo el alumno con ID 10).  
+
+🔹 **Requisitos:**  
+- **Autenticación:** Se debe enviar un **Bearer Token** en los headers con el **TOKEN_GENERADO**.  
+
+🔹 **Ejemplos de Uso:**  
+✅ Obtener todos los alumnos:  
 ```
-GET: http://localhost:8000/api/consultar-alumno/5
+GET: http://localhost:8000/api/consultar-alumno
+```  
+✅ Obtener alumnos de un grado específico:  
 ```
+GET: http://localhost:8000/api/consultar-alumno?grado=5
+```  
+✅ Obtener un alumno específico:  
+```
+GET: http://localhost:8000/api/consultar-alumno?alumno=10
+```   
 
 ---
 
- **Ahora puedes consumir la API sin problemas!**
+ 
 

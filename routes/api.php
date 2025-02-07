@@ -69,7 +69,7 @@ Route::post('/login', function (Request $request) {
 
 Route::middleware(['auth:sanctum', 'throttle:60,1'])->group(function () {
     Route::post('/crear-alumno', [AlumnoController::class, 'store']);
-    Route::get('/consultar-alumno/{idGrado}', [AlumnoController::class, 'index']);
+    Route::get('/consultar-alumno', [AlumnoController::class, 'index']);
 });
 
 

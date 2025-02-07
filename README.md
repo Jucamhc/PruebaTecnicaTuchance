@@ -1,7 +1,7 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 # Guía para Iniciar el Backend
-
+Nota: Los valores de las variables de entorno se han dejado predefinidos para facilitar la configuración y ejecución del proyecto.
 ## Requisitos Previos
 - Tener **Docker** instalado en tu sistema.
 

@@ -53,9 +53,20 @@ class AlumnoController extends Controller
         ], 201);
     }
 
-    public function index($idGrado)
+    public function index(Request $request)
     {
-        $alumnos = Alumno::where('grado', $idGrado)->get();
+        $query = Alumno::query();
+
+        if ($request->has('alumno')) {
+            $query->where('id', $request->query('alumno'));
+        }
+
+        if ($request->has('grado')) {
+            $query->where('grado', $request->query('grado'));
+        }
+
+        $alumnos = $query->get();
+
         return response()->json($alumnos);
     }
 }

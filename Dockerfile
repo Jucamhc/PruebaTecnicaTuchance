@@ -17,6 +17,8 @@ WORKDIR /var/www
 COPY . .
 
 # Instalar dependencias de Laravel
-RUN composer install --no-dev --optimize-autoloader
+RUN composer install --no-dev --optimize-autoloader \
+    && composer require fakerphp/faker --dev \
+    && composer dump-autoload
 
 CMD php artisan migrate --force && php artisan db:seed --force && php artisan serve --host=0.0.0.0 --port=8000

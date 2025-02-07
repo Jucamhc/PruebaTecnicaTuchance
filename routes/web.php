@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\AlumnoController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +18,3 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware('auth.apikey')->group(function () {
-    Route::post('/crear-alumno', [AlumnoController::class, 'store']);
-    Route::get('/consultar-alumno/{idGrado}', [AlumnoController::class, 'index']);
-});

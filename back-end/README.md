@@ -2,15 +2,6 @@
 
 # Guía para Iniciar el Backend
 Nota: Los valores de las variables de entorno se han dejado predefinidos para facilitar la configuración y ejecución del proyecto.
-## Requisitos Previos
-- Tener **Docker** instalado en tu sistema.
-
-## Iniciar el Backend
-Ejecuta el siguiente comando en la terminal dentro del directorio del proyecto:
-
-```sh
-docker-compose up -d --build
-```
 
 Este comando realizará las siguientes acciones:
 

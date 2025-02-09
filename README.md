@@ -39,9 +39,16 @@ Sigue estos pasos para iniciar el backend y el frontend:
 
 Esto descargará las imágenes necesarias y levantará los servicios en contenedores.
 
-## 📄 Documentación
-Para más detalles sobre la API y cómo consumirla, revisa la documentación interna en el proyecto.
+## 🌍 Acceso a la Aplicación
 
-## 📬 Contacto
-Si tienes preguntas o problemas, siéntete libre de abrir un **issue** en el repositorio o contactarme en [correo@example.com](mailto:correo@example.com).
+- **Backend (Laravel API):** `http://localhost:8000`
+- **Base de Datos (PostgreSQL):** Puerto `5432`
+- **Frontend (Angular):** `http://localhost:55655`
+
+El frontend está configurado para ejecutarse en el puerto **`55655`**, por lo que puedes acceder a la aplicación desde tu navegador en:  
+👉 **[http://localhost:55655](http://localhost:55655)**
+
+## 📄 Documentación
+
+Para más detalles sobre la API y cómo consumirla, revisa la documentación interna en el proyecto.
 

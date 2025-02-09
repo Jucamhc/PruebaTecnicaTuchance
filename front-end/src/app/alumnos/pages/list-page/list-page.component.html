@@ -27,7 +27,7 @@
   </mat-form-field>
 </div>
 
-<div *ngIf="!loading; else divLoading" class="grid bm-8">
+<div *ngIf="!loading; else divLoading" class="grid bm-8 ml-4 mr-4">
   <div *ngFor="let alumno of getAlumnosFiltrados()" class="col-12 sm:col-4 md:col-3 xl:col-2">
     <alumnos-hero-card [alumno]="alumno"></alumnos-hero-card>
   </div>

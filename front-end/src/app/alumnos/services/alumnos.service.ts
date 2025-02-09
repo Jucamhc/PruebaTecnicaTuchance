@@ -7,10 +7,9 @@ import { Alumno } from '../interfaces/alumno.interface';
 @Injectable({ providedIn: 'root' })
 export class AlumnosService {
   private baseUrl: string = enviroments.baseUrl;
-  /*     const token = localStorage.getItem('token'); */
-  private token: string = '1|T2pzObvSGpWUMgo6FORoDzYBsussTZJCmCYQ6u6a01310dcd'
-  constructor(private http: HttpClient) { }
+  private token = localStorage.getItem('token');
 
+  constructor(private http: HttpClient) { }
 
   getAlumnos(): Observable<Alumno[]> {
     const headers = new HttpHeaders().set('Authorization', `Bearer ${this.token}`);

@@ -1,1 +1,70 @@
-<p>new-page works!</p>
+<ng-template #divLoading>
+  <div class="flex justify-content-center align-items-center h-screen">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>
+
+<div *ngIf="!loading; else divLoading" class="p-4 flex justify-content-center">
+  <mat-card class="p-4 surface-card shadow-2 border-round w-full md:w-6 lg:w-4">
+    <mat-card-title class="text-primary font-bold text-xl"> Nuevo Alumno</mat-card-title>
+
+    <form [formGroup]="form" (ngSubmit)="guardarAlumno()">
+      <mat-form-field class="w-full">
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="nombre" required>
+        <mat-error *ngIf="form.get('nombre')?.invalid">El nombre es requerido</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="w-full">
+        <mat-label>Fecha de Nacimiento</mat-label>
+        <input matInput [matDatepicker]="pickerNacimiento" formControlName="fecha_nacimiento" required>
+        <mat-datepicker-toggle matIconSuffix [for]="pickerNacimiento"></mat-datepicker-toggle>
+        <mat-datepicker #pickerNacimiento></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field class="w-full">
+        <mat-label>Nombre del Padre</mat-label>
+        <input matInput formControlName="nombre_padre" required>
+      </mat-form-field>
+
+      <mat-form-field class="w-full">
+        <mat-label>Nombre de la Madre</mat-label>
+        <input matInput formControlName="nombre_madre" required>
+      </mat-form-field>
+
+      <mat-form-field class="w-full">
+        <mat-label>Grado</mat-label>
+        <mat-select formControlName="grado" required>
+          <mat-option *ngFor="let grado of grados" [value]="grado">
+            {{ grado }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="w-full">
+        <mat-label>Sección</mat-label>
+        <mat-select formControlName="seccion" required>
+          <mat-option *ngFor="let sec of secciones" [value]="sec">
+            {{ sec }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="w-full">
+        <mat-label>Fecha de Ingreso</mat-label>
+        <input matInput [matDatepicker]="pickerIngreso" formControlName="fecha_ingreso" required>
+        <mat-datepicker-toggle matIconSuffix [for]="pickerIngreso"></mat-datepicker-toggle>
+        <mat-datepicker #pickerIngreso></mat-datepicker>
+      </mat-form-field>
+
+      <mat-card-actions class="flex justify-content-between mt-3">
+        <button mat-raised-button color="warn" [routerLink]="'/alumnos/list'">
+          <mat-icon>arrow_back</mat-icon> Volver
+        </button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
+          <mat-icon>save</mat-icon> Guardar
+        </button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>

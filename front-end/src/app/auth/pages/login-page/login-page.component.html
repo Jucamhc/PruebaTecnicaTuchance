@@ -1,1 +1,38 @@
-<p>login-page works!</p>
+<div class="flex flex-column">
+  <!-- Botón para crear usuario -->
+  <div class="w-full flex justify-content-end mb-4">
+    <button
+       mat-flat-button color="warn"
+       class="font-bold px-4 py-2 border-round shadow-3 hover:opacity-80"
+       (click)="onRegister()"
+       >
+      <mat-icon class="mr-2">person_add</mat-icon>
+      <span class="text-sm">
+        Click aquí antes de Iniciar sesión <br />
+        <strong>Crear Usuario</strong>
+      </span>
+    </button>
+  </div>
+
+  <span class="text-lg mb-4">Login</span>
+
+  <mat-form-field>
+    <mat-label>Usuario</mat-label>
+    <input
+      type="text"
+      matInput
+      placeholder="Nombre de usuario"
+      value="pruebaTecnica@tuchance.com"
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Contraseña</mat-label>
+    <input type="password" matInput placeholder="Contraseña" value="12345679" />
+  </mat-form-field>
+
+  <button mat-button mat-flat-button color="primary" (click)="onLogin()">
+    <mat-icon>save</mat-icon>
+    Iniciar Sesion
+  </button>
+</div>

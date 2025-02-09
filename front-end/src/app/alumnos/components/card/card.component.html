@@ -1,0 +1,50 @@
+<mat-card class="p-4 surface-card shadow-2 border-round">
+  <div>
+    <mat-card-title class="text-primary font-bold text-lg">{{
+      alumno.nombre
+    }}</mat-card-title>
+    <mat-card-subtitle class="text-secondary">
+      📅 Nacimiento: {{ alumno.fecha_nacimiento | date : "longDate" }}
+    </mat-card-subtitle>
+  </div>
+
+  <mat-card-header class="flex align-items-center gap-6">
+    <img
+      mat-card-image
+      class="w-6rem h-6rem border-circle border-primary"
+      [src]="alumno | alumnoImage"
+      [alt]="alumno.nombre"
+    />
+  </mat-card-header>
+
+  <mat-card-content class="mt-3">
+    <p class="text-sm">
+      <strong class="text-primary">👨‍👦 Padre:</strong>
+      {{ alumno.nombre_padre }}
+    </p>
+    <p class="text-sm">
+      <strong class="text-accent">👩‍👦 Madre:</strong>
+      {{ alumno.nombre_madre }}
+    </p>
+
+    <div class="mt-3 flex gap-2">
+      <mat-chip color="primary" class="text-white font-bold"
+        >🎓 {{ alumno.grado }}</mat-chip
+      >
+      <mat-chip color="accent" class="text-white font-bold"
+        >🏫 Sección: {{ alumno.seccion }}</mat-chip
+      >
+    </div>
+
+    <p class="text-sm mt-3">
+      <strong class="text-teal-500">📌 Fecha de Ingreso:</strong>
+      {{ alumno.fecha_ingreso | date : "longDate" }}
+    </p>
+  </mat-card-content>
+
+  <mat-card-actions class="flex justify-content-end mt-3">
+    <button mat-icon-button color="accent"  [routerLink]="['/alumnos/', alumno.id]">
+      <mat-icon>visibility</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>

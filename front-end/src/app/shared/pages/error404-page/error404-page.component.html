@@ -1,1 +1,19 @@
-<p>error404-page works!</p>
+<div class="flex flex-column align-items-center justify-content-center h-screen text-center p-4">
+
+  <div class="border-2 border-red-500 text-red-500 px-6 py-3 text-8xl font-bold border-round-lg shadow-4">
+    404
+  </div>
+
+  <h2 class="text-4xl font-semibold text-gray-800 mt-4">Página no encontrada</h2>
+  <p class="text-lg text-gray-500 mt-2 max-w-30rem">
+    Lo sentimos, la página que buscas no existe o fue movida. Verifica la URL o regresa al inicio.
+  </p>
+
+  <button
+  class="bg-blue-500 hover:bg-blue-600 text-gray-50 text-lg px-5 py-3 border-round-lg mt-5 shadow-3 transition-all"
+  (click)="goToLogin()">
+  Ir al Login
+</button>
+
+
+</div>

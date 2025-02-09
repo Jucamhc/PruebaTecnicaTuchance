@@ -17,12 +17,12 @@ export class AlumnosService {
     return this.http.get<Alumno[]>(`${this.baseUrl}/consultar-alumno`, { headers });
   }
 
-  getAlumnosOrGroupById(id: string, tipo: string): Observable<Alumno | undefined> {
+  getAlumnosOrGroupById(id: string, tipo: string): Observable<Alumno | Alumno[] | undefined> {
 /*     const token = localStorage.getItem('token');
  */    const token = '1|T2pzObvSGpWUMgo6FORoDzYBsussTZJCmCYQ6u6a01310dcd';
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
 
-    return this.http.get<Alumno>(`${this.baseUrl}/consultar-alumno?${tipo}=${id}`, { headers })
+    return this.http.get<Alumno | Alumno[]>(`${this.baseUrl}/consultar-alumno?${tipo}=${id}`, { headers })
       .pipe(
         catchError(error => of(undefined))
       )

@@ -4,9 +4,31 @@
   </div>
 </ng-template>
 
+<!-- Contenedor de filtros -->
+<div class="p-4">
+  <mat-form-field appearance="outline" class="mr-2">
+    <mat-label>Filtrar por Grado</mat-label>
+    <mat-select [(ngModel)]="gradoFiltro">
+      <mat-option value="">Todos</mat-option>
+      <mat-option *ngFor="let grado of [1, 2, 3, 4, 5]" [value]="grado">{{
+        grado
+      }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Filtrar por Sección</mat-label>
+    <mat-select [(ngModel)]="seccionFiltro">
+      <mat-option value="">Todas</mat-option>
+      <mat-option *ngFor="let seccion of ['A', 'B', 'C']" [value]="seccion">{{
+        seccion
+      }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
 
 <div *ngIf="!loading; else divLoading" class="grid bm-8">
-  <div *ngFor="let alumno of alumnos" class="col-12 sm:col-4 md:col-3 xl:col-2">
+  <div *ngFor="let alumno of getAlumnosFiltrados()" class="col-12 sm:col-4 md:col-3 xl:col-2">
     <alumnos-hero-card [alumno]="alumno"></alumnos-hero-card>
   </div>
 </div>

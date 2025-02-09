@@ -10,6 +10,7 @@ import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { MaterialModule } from '../material/material.module';
 import { CardComponent } from './components/card/card.component';
 import { AlumnoImagePipe } from './pipes/alumnoImage.pipe';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { AlumnoImagePipe } from './pipes/alumnoImage.pipe';
   imports: [
     CommonModule,
     AlumnosRoutingModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule
   ]
 })
 export class AlumnosModule { }

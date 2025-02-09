@@ -12,6 +12,9 @@ export class ListPageComponent implements OnInit {
 
   public loading = true;
   public alumnos: Alumno[] = [];
+  public gradoFiltro: string = '';
+  public seccionFiltro: string = '';
+
   constructor(private alumnosService: AlumnosService) { }
 
   ngOnInit(): void {
@@ -20,5 +23,11 @@ export class ListPageComponent implements OnInit {
   }
 
 
-
+  getAlumnosFiltrados(): Alumno[] {
+    return this.alumnos.filter(alumno => {
+      const filtroGrado = this.gradoFiltro ? Number(alumno.grado) === Number(this.gradoFiltro) : true;
+      const filtroSeccion = this.seccionFiltro ? alumno.seccion === this.seccionFiltro : true;
+      return filtroGrado && filtroSeccion;
+    });
+  }
 }

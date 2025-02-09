@@ -8,6 +8,8 @@ import { ListPageComponent } from './pages/list-page/list-page.component';
 import { AlumnoPageComponent } from './pages/alumno-page/alumno-page.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { MaterialModule } from '../material/material.module';
+import { CardComponent } from './components/card/card.component';
+import { AlumnoImagePipe } from './pipes/alumnoImage.pipe';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { MaterialModule } from '../material/material.module';
     NewPageComponent,
     ListPageComponent,
     AlumnoPageComponent,
-    SearchPageComponent
+    SearchPageComponent,
+    CardComponent,
+    AlumnoImagePipe
   ],
   imports: [
     CommonModule,

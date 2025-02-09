@@ -9,6 +9,7 @@ export interface Alumno {
   fecha_ingreso:    Date;
   created_at:       Date;
   updated_at:       Date;
+  img?:             string;
 }
 
 export enum Seccion {

@@ -10,12 +10,13 @@ import { AlumnosService } from '../../services/alumnos.service';
 })
 export class ListPageComponent implements OnInit {
 
+  public loading = true;
   public alumnos: Alumno[] = [];
   constructor(private alumnosService: AlumnosService) { }
 
   ngOnInit(): void {
     this.alumnosService.getAlumnos()
-      .subscribe(alumnos => this.alumnos = alumnos)
+      .subscribe(alumnos => { this.alumnos = alumnos, this.loading = false })
   }
 
 
